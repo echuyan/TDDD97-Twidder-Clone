@@ -1,0 +1,247 @@
+
+/*General styling */
+
+body {
+    background-color: rgb(103, 187, 243);
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:floralwhite;
+}
+
+h4 {
+    text-align: left;
+    font-family:'Courier New', Courier, monospace;  
+    color:floralwhite;
+    background-color: rgb(75, 155, 243);
+}
+
+h5 {
+    text-align: left;
+    font-family:'Courier New', Courier, monospace;  
+    color:floralwhite;
+    background-color: rgb(75, 155, 243);
+}
+
+#feedback {
+    clear:left;
+    height: 20px;
+}
+
+/*Welcome view styling*/
+#welcomeviewdiv  {
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 100px;
+   width: 600px;
+   height:400px;
+}
+
+
+
+img  {
+    height:400px;
+    width: 338px;
+    border:1px solid black;
+    float:left;
+ }
+
+#login {
+    border:1px solid black;
+    width: 248px;
+    height: 23%;
+    float:left;
+    margin-left:10px;
+    background-color: white;
+    margin-bottom: 8px;
+}
+
+#signup {
+    border:1px solid black;
+    width: 248px;
+    height: 75%;
+    float:left;
+    margin-left:10px;
+    background-color: white;
+}
+
+
+form div {
+    width: auto;
+    height: 6%;
+    padding: 2px;
+    margin-top: 2px;
+}
+
+form label {
+    float:left ;
+    text-align:left;
+    padding: 1px;
+    margin-top: 1px;
+}
+form input {
+    float:right ;
+   width:60%;
+   padding: 1px;
+   margin-top: 1px;
+}
+
+form select {
+    float:right ;
+   width:62%;
+   padding: 1px;
+   margin-top: 1px;
+}
+
+#submit {
+    margin-bottom: 2px;
+    padding: 2px;
+    width:50%;
+   margin-top: 5%;
+}
+#pwdreset {
+    margin-bottom: 2px;
+    padding: 2px;
+    width:50%;
+   margin-top: 5%;
+}
+
+/*Forgotten password view styling*/
+#forgotpasswordviewdiv  {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    width: 600px;
+    height:400px;
+ }
+
+ #remindpassword {
+    float:left;
+    width: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+ }
+
+/*Tabs styling*/
+.tab {
+    overflow: hidden;
+    border: 1px solid gray;
+    background-color:lightgray;
+}
+  
+ .tab button {
+    background-color: lightgray;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 20px;
+}
+  
+.tab button:hover {
+    background-color: grey;
+}
+  
+.tab button.active {
+    background-color: grey;
+}
+  
+.tabcontent {
+    display: none;
+    padding: 10px;
+   
+    border-top: none;
+    height: auto;
+  }
+
+/*Home tab styling*/
+#persinf {
+    float:left;
+    width: 30%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#postmess {
+    float:left;
+    width: 30%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#Walldiv {
+    float:left;
+    width: 30%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#usermessage {
+    
+    width: 80%;
+}
+#personalInfo {
+    
+    width: 80%;
+}
+
+/*Browse tab styling*/
+#Browse {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width:auto;
+    height:100%;
+    clear: both;
+}
+
+#emailtofind {
+    margin-bottom:  5px;
+float: left;
+}
+
+#emailsearch {
+    float:left;
+    width: 15%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#emailtofind {
+    float:left;
+    width: 100%;
+  
+}
+
+#usermessageOther{
+    float:left;
+    width: 100%;
+  
+}
+
+#persinfOther {
+    float:left;
+    width: 15%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#postmessOther {
+    float:left;
+    width: 33%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#WalldivOther {
+    float:left;
+    width: 30%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+

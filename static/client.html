@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <title>Twidder</title>
+        <link href="/static/client.css" type="text/css" rel="stylesheet">
+        <script src="/static/client.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js" integrity="sha512-xbQU0+iHqhVt7VIXi6vBJKPh3IQBF5B84sSHdjKiSccyX/1ZI7Vnkt2/8y8uruj63/DVmCxfUNohPNruthTEQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>      
+
+
+       
+       
+    
+    </head>
+    <body>
+      <script id="forgotpasswordview" type="text/view" > 
+        <div id="forgotpasswordviewdiv">
+            
+            <form id="remindpassword" onsubmit="sendNewPassword(this); return false;">
+            <p>Please enter your email </p>
+            <div><label for="emailforgottenpwd">Email</label><input required id="emailforgottenpwd" type="email"></div>
+            <input id="submit" type="submit" >
+              
+            </form>
+            
+        </div>
+    </script>
+      <script id="welcomeview" type="text/view" > 
+        <div id="welcomeviewdiv">
+            <img src="/static/wimage.png" alt="Twidder logo">
+            <form id="login" onsubmit="validateLogin(this); return false;">
+            <div><label for="email">Email</label><input required id="email" type="email"></div>
+            <div><label for="password">Password</label><input required id="password" type="password"></div>
+            <input id="submit" type="submit" >
+            <button id="pwdreset" onclick="resetPassword()">Forgot password?</button>
+            </form>
+            <form id="signup" onsubmit="validateSignup(this); return false;">
+            <h2>Sign up here</h2>
+            <div><label for="firstname">First name</label><input required id="firstname" type="text"></div>
+            <div><label for="familyname">Family name</label><input required id="familyname" type="text"></div>
+            <div><label for="gender">Gender</label><select required id="gender" name="Gender" size=1>
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
+                                              </select></div>
+            <div><label id="citylbl" for="city">City</label><input required id="city" type="text"></div>
+            <div><label for="country">Country</label><input required id="country" type="text"></div>
+            <div><label for="email">Email</label><input required id="emailsignup" type="email"></div>
+            <div> <label for="password">Password</label><input required id="passwordsignup" type="password"></div>
+            <div><label for="repeatpassword">Repeat PSW</label><input required id="repeatpassword" type="password"></div>
+            <div><input id="submit1" type="submit" ></div>
+            </form>
+        </div>
+    </script>
+    <script id="profileview"  type="text/view" > 
+        <div class="tab">
+            <button id="HomeButton" class="tablinks" id="defaultTab" onclick="openTab(event, 'Home')">Home</button>
+            <button id="BrowseButton" class="tablinks" onclick="openTab(event, 'Browse')">Browse</button>
+            <button id="AccountButton" class="tablinks" onclick="openTab(event, 'Account')">Account</button>
+          </div>
+        
+         
+          <div id="Home" style="display:block" class="tabcontent">
+            <h3>Home</h3>
+            <div id="persinf">
+            <h4>Personal Info.</h4>
+            <p id="personalInfo"></p>
+            </div>
+
+            <div id="postmess">
+              <h4>Here you can post any message to the Twidder board.</h4>
+            <textarea id="usermessage" ondrop="drop(event)" ondragover="allowDrop(event)"  name="usermessage">
+                Put your message here
+            </textarea>
+            <button id="selfPost" class="postmessage" onclick="postSelf()">Post</button>
+            <div id="emptymessageWall"></div>
+          </div>
+          
+            <div id="Walldiv"><h4>Wall. Here all messages are displayed. </h4>
+              <button class="reload" onclick="reload()">Reload</button>
+              <h5 >You can drag'n'drop any message from the wall to the text area to modify it and post again</h5>
+              <p id="Wall"></p>
+            </div>
+            
+          
+          </div>
+          
+          <!--BROWSE-->
+          <div id="Browse" class="tabcontent">
+            
+            <h3>Browse</h3>
+            <form id="search" onsubmit="return false;">
+            <div id="emailsearch">
+              <h4>Search (by email)</h4><br>
+              <input id="emailtofind" required type="email"><br>
+              <button id="findotheruser" class="Find" onclick="displayOtherUsersData()">Find</button>
+              <div id="emailerror"></div>
+            </div>
+          </form>
+            
+            <div id="persinfOther">
+              <h4>Personal Info.</h4>
+              <p id="personalInfoOther"></p>
+            </div>
+
+            <div id="postmessOther">
+                <h4>Here you can post any message to the User's Twidder board.</h4>
+                <textarea id="usermessageOther" ondrop="drop(event)" ondragover="allowDrop(event)" name="usermessageOther">
+                  Put your message here
+                </textarea>
+                <button id="otherPost" class="postmessage" onclick="postOther()">Post</button>
+                <div id="emptymessageWallOther"></div>
+            </div>
+            
+            <div id="WalldivOther"><h4>Wall. Here all messages are displayed. </h4>
+                <button class="reload" onclick="reloadOther()">Reload</button>
+                <h5 >You can drag'n'drop any message from the wall to the text area to modify it and post again</h5>
+                <p id="WallOther"></p>
+             </div>
+              
+
+
+          </div>
+          
+
+          <div id="Account" class="tabcontent">
+            <h3>Account</h3>
+            
+            <button class="pwdchange" onclick="changePassword()">Change password</button>
+           
+            <button class="signout" onclick="signOut()">SignOut</button>
+          </div>
+         
+    </script>
+   
+    <div id="placeholder">
+
+</div>
+
+<div id="feedback">
+
+</div>
+
+    </body>
+</html>
